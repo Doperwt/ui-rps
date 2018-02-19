@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { fetchOneGame, fetchPlayers } from '../actions/games/fetch'
 import { connect as subscribeToWebsocket } from '../actions/websocket'
 import JoinGameDialog from '../components/games/JoinGameDialog'
-
+import RockPaperScissors from '../components/games/RockPaperScissors'
 const playerShape = PropTypes.shape({
   userId: PropTypes.string.isRequired,
   symbol: PropTypes.string,
@@ -59,12 +59,7 @@ class Game extends PureComponent {
       <div className="Game">
         <h1>Game!</h1>
         <p>{title}</p>
-
-        <h1>YOUR GAME HERE! :)</h1>
-
-        <h2>Debug Props</h2>
-        <pre>{JSON.stringify(this.props, true, 2)}</pre>
-
+        <RockPaperScissors id={this.props.game._id} />
         <JoinGameDialog gameId={game._id} />
       </div>
     )
