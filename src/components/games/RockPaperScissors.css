@@ -1,0 +1,7 @@
+.size{
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid black;
+  margin: 5px;
+}
